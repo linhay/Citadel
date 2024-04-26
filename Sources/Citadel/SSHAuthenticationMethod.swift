@@ -4,12 +4,12 @@ import Crypto
 
 /// Represents an authentication method.
 public struct SSHAuthenticationMethod: NIOSSHClientUserAuthenticationDelegate {
-    private enum Implementation {
+    public enum Implementation {
         case custom(NIOSSHClientUserAuthenticationDelegate)
         case user(String, offer: NIOSSHUserAuthenticationOffer.Offer)
     }
     
-    private let implementation: Implementation
+    public let implementation: Implementation
     
     internal init(
         username: String,
